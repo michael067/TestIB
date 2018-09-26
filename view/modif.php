@@ -4,7 +4,7 @@ include "header.php";
 if (isset($result)){
     if (filter_var($result["id"],FILTER_VALIDATE_INT)){
 ?>
-<form action="'.$_SESSION['chemin'].'/edit" method="post">
+<form action="<?=$_SESSION['chemin'];?>/edit" method="post">
 <input name="id" type=hidden readonly value="<?=$result["id"];?>">
 <div class="row">
     <div class="col">
@@ -40,7 +40,7 @@ Bio :
 </div>
 <input type="submit" value="Update">
 </form>
-<a href="/formation/codeAnnuaire/index.php">Retour à L'index</a>
+<a href="<?=$_SESSION['chemin'];?>">Retour à L'index</a>
 
 <?php
 } 
