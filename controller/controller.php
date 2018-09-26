@@ -66,4 +66,12 @@ function add_action(){
     include_once ("view/ajouter.php");
 }
 
+
+function pdf_action($id){
+    // passage par le model.php pour recuperation des informations
+    $detail = return_one_contact($id);
+    //passage par la vue pour creer l'affichage
+    require("view/pdfView.php");
+}
+
 ?>
