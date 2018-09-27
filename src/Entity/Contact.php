@@ -19,24 +19,19 @@ class Contact{
     private $id;
 
     /**
-    * @ORM\Column(type="string")
+    * @ORM\Column(type="text")
     */
     private $prenom;
 
     /**
-    * @ORM\Column(type="string")
+    * @ORM\Column(type="text")
     */
     private $nom;
 
     /**
-    * @ORM\Column(type="string")
+    * @ORM\Column(type="text")
     */
     private $tel;
-
-    /**
-    * @ORM\Column(type="string")
-    */
-    private $email;
 
     /**
     * @ORM\Column(type="text")
@@ -56,9 +51,6 @@ class Contact{
     public function getTel(){
         return $this->tel;
     }
-    public function getEmail(){
-        return $this->email;
-    }
     public function getBio(){
         return $this->bio;
     }
@@ -76,9 +68,6 @@ class Contact{
     }
     public function setTel($tel){
         return $this->tel = $tel;
-    }
-    public function setEmail($email){
-        return $this->email = $email;
     }
     public function setBio($bio){
         return $this->bio = $bio;
