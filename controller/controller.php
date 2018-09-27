@@ -1,4 +1,7 @@
 <?php
+
+
+
 function list_action(){
     $contacts=return_contacts();
     include_once ("view/view.php");
@@ -8,7 +11,7 @@ function show_action($id){
     if (isset($_GET['id'])){
         $id=filter_var($_GET['id'],FILTER_VALIDATE_INT);
         if (is_int($id)){
-            $result = return_one_contact($id);
+            $user = return_one_contact($id);
             include_once ("view/viewDetail.php");
         }
     }
@@ -18,7 +21,7 @@ function edit_action($id){
     if (isset($_GET['id'])){
         $id=filter_var($_GET['id'],FILTER_VALIDATE_INT);
         if (isset($id)){
-            $result = return_one_contact($id);
+            $user = return_one_contact($id);
             include_once ("view/modif.php");
         }
     }

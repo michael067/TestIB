@@ -2,7 +2,9 @@
     // Include the main TCPDF library (search for installation path).
     use Monolog\Logger;
     use Monolog\Handler\StreamHandler;
+    use Tuto\Entity\Contact;
 
+    
         // create new PDF document
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -44,7 +46,7 @@
     $pdf->AddPage();
     
     // set some text to print
-    $txt = "Fiche de : ".$detail['nom']." ".$detail['prenom']."\nTel : ".$detail['tel']."\n\nBiographie : ".$detail['bio'];
+    $txt = "Fiche de : ".$detail->getNom()." ".$detail->getPrenom()."\nTel : ".$detail->getTel()."\n\nBiographie : ".$detail->getBio();
     /*<<<EOD
     TCPDF Example 002
 
@@ -62,9 +64,9 @@ $log = new Logger('PdfLogger');
 $log->pushHandler(new StreamHandler('log/pdflogger.log', Logger::WARNING));
 
 // add records to the log
-$log->warning('Création PDF de '.$detail['nom'].' '.$detail['prenom'].' '.date("m.d.y").' valide');
+$log->warning('Création PDF de '.$detail->getNom().' '.$detail->getPrenom().' '.date("m.d.y").' valide');
 
 
     //Close and output PDF document
-    $pdf->Output('Fiche'.$detail['nom'].$detail['prenom'].'.pdf', 'I');
+    $pdf->Output('Fiche'.$detail->getNom().$detail->getPrenom().'.pdf', 'I');
 ?>

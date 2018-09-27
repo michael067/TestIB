@@ -1,15 +1,14 @@
 <?php
 include "header.php";
 
-if (isset($result)){
-    if (filter_var($result["id"],FILTER_VALIDATE_INT)){
+if ($user){
 ?>
 <div class="row">
     <div class="col">
         Prenom :
     </div>
     <div class="col">  
-    <?=$result["prenom"];?>
+    <?=$user->getPrenom();?>
     </div>
 </div>
 <div class="row">
@@ -17,7 +16,7 @@ if (isset($result)){
 Nom :
 </div>
     <div class="col"> 
-    <?=$result["nom"];?>
+    <?=$user->getNom();?>
 </div>
 </div>
 <div class="row">
@@ -25,7 +24,7 @@ Nom :
 Tel : 
 </div>
     <div class="col"> 
-    <?=$result["tel"];?>
+    <?=$user->getTel();?>
 </div>
 </div>
 <div class="row">
@@ -33,7 +32,7 @@ Tel :
 Bio : 
 </div>
     <div class="col"> 
-    <?=$result["bio"];?>
+    <?= $user->getBio();?>
     </div>
 </div>
 <br>
@@ -41,12 +40,10 @@ Bio :
 
 
 <?php 
-
-    } 
 } 
 else {
     http_response_code(404);
-    header('Location: index.php');
+    header('Location: '.$_SESSION['chemin'].'');
     exit;
 }
 
