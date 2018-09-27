@@ -1,8 +1,11 @@
 <?php
 
+
 function connect_db(){
+    require_once 'base_config.php';
     try {
-        $link = new PDO("mysql:dbname=annuaire;host=127.0.0.1", "annuaire", "annuaire");
+        $dsn = "mysql:dbname=$dbname;host=$dbhost";
+        $link = new PDO($dsn, $dbuser, $dbpass);
     } catch (PDOException $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
     }

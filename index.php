@@ -1,9 +1,9 @@
 <?php
 session_start();
+
 require_once 'model/model.php';
 require_once 'controller/controller.php';
 require_once 'vendor/autoload.php';
-
 
 $_SESSION['chemin'] = $_SERVER['SCRIPT_NAME'];
 
