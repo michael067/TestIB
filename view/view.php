@@ -36,7 +36,7 @@ if (isset($_SESSION['message'])){
                 <td><?=$result["nom"]?></td>
                 <td class="text-right">
                     <a  class="btn btn-primary" href="<?=$_SESSION['chemin'];?>/show?id=<?=$result["id"]?>"><i class="fas fa-eye"></i></a>
-                    <a  class="btn btn-primary" href="index.php/pdf?id=<?=$result["id"]?>" target=_blank><i class="fas fa-file-pdf"></i></a>
+                    <a  class="btn btn-primary" href="<?=$_SESSION['chemin'];?>/pdf?id=<?=$result["id"]?>" target=_blank><i class="fas fa-file-pdf"></i></a>
                     <a  class="btn btn-primary" href="<?=$_SESSION['chemin'];?>/edit?id=<?=$result["id"]?>"><i class="fas fa-edit"></i></a>
                     <a  class="btn btn-primary" href="<?=$_SESSION['chemin'];?>/delete?id=<?=$result["id"]?>"><i class="fas fa-trash-alt"></i></a>
                 </td>

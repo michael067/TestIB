@@ -2,6 +2,7 @@
 session_start();
 require_once 'model/model.php';
 require_once 'controller/controller.php';
+require_once 'vendor/autoload.php';
 
 
 $_SESSION['chemin'] = $_SERVER['SCRIPT_NAME'];
@@ -21,10 +22,13 @@ elseif($_SESSION['chemin']."/edit"===$uri && isset($_POST)){
     edit_valid($_POST);
 }
 elseif($_SESSION['chemin']."/add"===$uri ){
-        add_action();
+    add_action();
 }
 elseif($_SESSION['chemin']."/delete"===$uri && isset($_GET['id'])){
     delete_action($_GET);
+}
+elseif($_SESSION['chemin']."/pdf"===$uri && isset($_GET['id'])){
+    pdf_action($_GET['id']);
 }else{
     header('HTTP/1.1 404 Not Found');
     echo $uri;
