@@ -59,7 +59,7 @@
 
 // create a log channel
 $log = new Logger('PdfLogger');
-$log->pushHandler(new StreamHandler('pdflogger.log', Logger::WARNING));
+$log->pushHandler(new StreamHandler('log/pdflogger.log', Logger::WARNING));
 
 // add records to the log
 $log->warning('Création PDF de '.$detail['nom'].' '.$detail['prenom'].' '.date("m.d.y").' valide');
