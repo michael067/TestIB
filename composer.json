@@ -1,0 +1,7 @@
+{
+    "require": {
+        "psr/log": "^1.0",
+        "tecnickcom/tcpdf": "^6.2",
+        "monolog/monolog": "^1.23"
+    }
+}
